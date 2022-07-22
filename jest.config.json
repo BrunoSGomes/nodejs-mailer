@@ -1,0 +1,10 @@
+{
+    "testEnvironment": "node",
+    "displayName": {
+        "name": "root-tests",
+        "color": "magenta"
+    },
+    "transform": {
+        "\\.[jt]sx?$": "babel-jest"
+    }
+}
