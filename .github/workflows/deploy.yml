@@ -27,7 +27,7 @@ jobs:
       - name: Verify code style
         run: npm run style
 
-      - name: Run tests
+      - name: Running tests
         run: npm run test
 
       - name: Deploy to heroku
