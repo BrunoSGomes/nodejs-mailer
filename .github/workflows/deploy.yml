@@ -20,7 +20,7 @@ jobs:
         run: npm ci -f --silent
 
       - name: Generate .env file
-        run: echo $ENV_VAR > ./src/.env
+        run: echo $ENV_VAR > .env
         env:
           ENV_VAR: ${{ secrets.ENV_VAR }}
 
@@ -36,4 +36,4 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: ${{secrets.HEROKU_APP_NAME}}
           heroku_email: ${{secrets.HEROKU_EMAIL}}
-          env_file: './src/.env'
+          env_file: '.env'

@@ -2,7 +2,9 @@ import express from 'express'
 import { emailRoutes } from '../usecase/email/router.js'
 import dotenv from 'dotenv'
 
-dotenv.config({ path: './src/.env' })
+if (process.env.NODE_ENV !== 'production') {
+    dotenv.config({ path: '.env' })
+}
 
 const app = express()
 app.use(express.urlencoded({ extended: true }))
