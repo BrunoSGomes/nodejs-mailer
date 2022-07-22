@@ -9,10 +9,20 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '18.1.0'
+
+      - name: Checkout master
+        uses: actions/checkout@master
 
       - name: Install modules
-        run: npm ci -f
+        run: npm ci -f --silent
+
+      - name: Generate .env file
+        run: echo $ENV_VAR > ./src/.env
+        env:
+          ENV_VAR: ${{ secrets.ENV_VAR }}
 
       - name: Verify code style
         run: npm run style
@@ -26,5 +36,3 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: ${{secrets.HEROKU_APP_NAME}}
           heroku_email: ${{secrets.HEROKU_EMAIL}}
-        env:
-          ${{secrets.ENV_VAR}}
