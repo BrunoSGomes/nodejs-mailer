@@ -97,6 +97,7 @@ Second, let's set the following environment variables in the Heroku project (sam
   Name: EMAIL_PASSWORD
   Value: Your e-mail password
 ```
+Now just push the project to master on GitHub
 ## API Documentation 📜
 
 #### Sends an email to the recipient defined in the .env
